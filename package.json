@@ -1,5 +1,5 @@
 {
-  "name": "zapparov.co.uk",
+  "name": "zapparov.dev",
   "version": "1.0.0",
   "description": "Aleksandr Zapparov Website",
   "scripts": {
@@ -37,7 +37,7 @@
   "author": {
     "name": "Aleksandr Zapparov",
     "email": "aleksandr@zapparov.co.uk",
-    "url": "zapparov.co.uk"
+    "url": "zapparov.dev"
   },
   "license": "UNLICENCED",
   "privacy": "private",

@@ -2,8 +2,8 @@ import isbot from "isbot";
 import Plausible from "plausible-tracker";
 
 const { trackEvent, trackPageview, enableAutoOutboundTracking } = Plausible({
-    domain: "zapparov.co.uk",
-    apiHost: "https://zapparov.co.uk",
+    domain: "zapparov.dev",
+    apiHost: "https://zapparov.dev",
 });
 
 
