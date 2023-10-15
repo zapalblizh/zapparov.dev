@@ -1,7 +1,7 @@
 ---
-title: Aleksandr Zapparov
-description: Yet Another Tailwind Alpine Starter Project for 11ty!
-layout: layouts/base.njk
+title: My Achievements
+description: Achievements Page for Aleksandr Zapparov
+layout: base.njk
 permalink: /achievements/
 ---
 <div class="px-6 py-24 rounded-md bg-base-200 p-12">
@@ -63,11 +63,11 @@ permalink: /achievements/
                             <!-- Content -->
                             {% if item.link != "" %}
                                 <div class="gap-2">
-                                    <a target="_blank" href={{ item.link }}><figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
+                                    <a target="_blank" href={{ item.link }}><figure><img src="../img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
                                     <p class="text-center text-sm"><a class="link text-blue-400 cursor-pointer" target="_blank" href={{ item.link }}>Verify over here</a></p>
                                 </div>
                             {% else %}
-                                <figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}"></figure>
+                                <figure><img src="../img/certificates/{{ item.img }}" alt="{{ item.name }}"></figure>
                             {% endif %}
                             <!-- Buttons -->
                             <span class="absolute top-2 right-2 cursor-pointer btn btn-ghost btn-circle" x-on:click="open = false">

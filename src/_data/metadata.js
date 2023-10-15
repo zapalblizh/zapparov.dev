@@ -1,16 +1,15 @@
 module.exports = {
-    title: "Alex Zappa",
-    url: process.env.URL || "http://localhost:8080",
+    title: "Aleksandr Zapparov",
+    url: "https://zapparov.dev" || "http://localhost:8080",
     language: "en",
-    description: "I am writing about my experiences as a naval navel-gazer.",
+    description: "Hello, Welcome to my website!",
     openGraph: {
         image: "/default-og-image.png",
         imageAlt: "",
     },
     author: {
-        name: "Alex Zappa",
-        twitter: "reatlat",
-        email: "alex@zappa.dev",
-        url: `${process.env.URL || "http://localhost:8080"}/about/`,
+        name: "Aleksandr Zapparov",
+        email: "alexander@zapparov.co.uk",
+        url: "https://zapparov.dev" || "http://localhost:8080" + "/about/",
     },
 };

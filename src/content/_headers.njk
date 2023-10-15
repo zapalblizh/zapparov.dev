@@ -1,0 +1,20 @@
+---
+permalink: '/_headers'
+eleventyExcludeFromCollections: true
+---
+{# Default #}
+/*
+X-Frame-Options: "SAMEORIGIN"
+X-Content-Type-Options: "nosniff"
+X-XSS-Protection: "1; mode=block"
+{%- if eleventy.env.runMode == 'build' -%}Access-Control-Allow-Origin = "{{ build.url or 'https://zapparov.dev' }}"{%- endif -%}
+
+{# TW Config #}
+/tw-config/*
+X-Robots-Tag: "noindex, nofollow"
+Cache-Control: "max-age=0, no-cache, no-store, must-revalidate"
+
+{# _headers Config #}
+/_helpers/*
+X-Robots-Tag: "noindex, nofollow"
+Cache-Control: "max-age=0, no-cache, no-store, must-revalidate"
