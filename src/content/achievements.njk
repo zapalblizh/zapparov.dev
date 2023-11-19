@@ -63,11 +63,11 @@ permalink: /achievements/
                             <!-- Content -->
                             {% if item.link != "" %}
                                 <div class="gap-2">
-                                    <a target="_blank" href={{ item.link }}><figure><img src="../img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
+                                    <a target="_blank" href={{ item.link }}><figure>{% image "../img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure></a>
                                     <p class="text-center text-sm"><a class="link text-blue-400 cursor-pointer" target="_blank" href={{ item.link }}>Verify over here</a></p>
                                 </div>
                             {% else %}
-                                <figure><img src="../img/certificates/{{ item.img }}" alt="{{ item.name }}"></figure>
+                                <figure>{% image "../img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure>
                             {% endif %}
                             <!-- Buttons -->
                             <span class="absolute top-2 right-2 cursor-pointer btn btn-ghost btn-circle" x-on:click="open = false">
