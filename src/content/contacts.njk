@@ -1,15 +1,16 @@
 ---
-title: Contact Me
-description: Contact Me Page
+title: Contact Aleksandr Zapparov
+description: Aleksandr Zapparov Contacts
 layout: base.njk
 permalink: /contacts/
 ---
 
-<div class="w-full bg-base-200 rounded-md p-6">
+<div class="w-full bg-base-200 rounded-md py-6 px-28">
 
     <div class="bg-base-200 rounded-md">
-        <div class="flex-col lg:flex-row-reverse">
-            <img src="../img/zapalblizh.jpeg" alt="Picture of Learner" class="max-w-sm rounded-lg shadow-2xl" height="200px" width="200px" />
+        <div class="flex justify-between items-center lg:flex-row-reverse">
+            {% image "../img/zapalblizh.jpeg", "Picture of Aleksandr Zapparov", [295, 360, 425, 768],
+            "max-w-sm rounded-lg shadow-2xl w-[295px] h-[295px]", "(min-width: 295px)" %}
 
             <div class="gap-y-6">
                 <h1 class="text-3xl font-bold">Contact me by:</h1>
