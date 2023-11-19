@@ -79,7 +79,7 @@ const certificates = [
         img: "Cloud-Application-Development-Foundations.png"
     }, {
         name: "DELE Level B2",
-        issuer: "INSTITUTO CERVANTES",
+        issuer: "Instituto Cervantes",
         issueDate: "2022-10-13",
         link: "",
         img: "DELE_B2.png"

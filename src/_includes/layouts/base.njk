@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" x-data="xDOM">
   <head>
-    {% include "partial/metagen.njk" %}
-    {% include "partial/scripts-head.njk" %}
-    {% include "partial/google-tag.njk" %}
+    {% include "partials/metagen.njk" %}
+    {% include "partials/scripts-head.njk" %}
+    {% include "partials/google-tag.njk" %}
 
     <!-- Plausible Integration -->
     <script defer data-domain="zapparov.dev" src="https://plausible.io/js/script.js"></script>
@@ -18,7 +18,7 @@
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="max-w-7xl mx-auto px-8">
-      {% include "../partial/navbar.njk" %}
+      {% include "../partials/navbar.njk" %}
 
       <main class="my-8">
         {% block content %}
@@ -26,7 +26,7 @@
         {% endblock %}
       </main>
 
-      {% include "../partial/footer.njk" %}
+      {% include "../partials/footer.njk" %}
 
     </div>
     <script defer src="/js/scripts.js"></script>

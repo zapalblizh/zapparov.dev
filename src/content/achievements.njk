@@ -15,12 +15,12 @@ permalink: /achievements/
                  class="flex w-full">
 
                 <!-- Trigger -->
-                <div class="w-full rounded-md shadow-lg bg-white bg-opacity-50 grid grid-cols-4 gap-4 select-none cursor-pointer border-4 border-blue-300 italic shadow-inner p-4" x-on:click="open = true">
+                <div class="w-full rounded-md bg-white bg-opacity-50 grid grid-cols-4 gap-4 select-none cursor-pointer border-4 border-blue-300 italic shadow-inner p-4" x-on:click="open = true">
                     <div>
                         <div class="p-2 rounded-full shadow-lg bg-white aspect-square text-blue-400 flex justify-center items-center">
                             {% if item.issuer == 'IBM' %}
                                 {% svg "ibm-logo-svgrepo-com", "w-full" %}
-                            {% elif item.issuer == 'INSTITUTO CERVANTES'%}
+                            {% elif item.issuer == 'Instituto Cervantes'%}
                                 {% svg "instituto-cervantes", "w-full" %}
                             {% elif item.issuer == 'Pearson EDEXCEL' %}
                                 {% svg "pearson-logo", "w-full" %}
@@ -33,7 +33,7 @@ permalink: /achievements/
                             {% endif %}
                         </div>
                     </div>
-                    <div class="col-span-3 flex flex-col gap-4">
+                    <div class="col-span-3 flex flex-col justify-between">
                         <p>{{ item.name }}</p>
                         <p>{{ item.issuer }}</p>
                         <p class="mb-0 text-xs">Earned {{ item.issueDate | readableDate("LLLL dd, yyyy") }}</p>
