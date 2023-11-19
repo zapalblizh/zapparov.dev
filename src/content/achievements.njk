@@ -1,7 +1,7 @@
 ---
-title: Aleksandr Zapparov
-description: Yet Another Tailwind Alpine Starter Project for 11ty!
-layout: layouts/base.njk
+title: My Achievements
+description: Achievements Page for Aleksandr Zapparov
+layout: base.njk
 permalink: /achievements/
 ---
 <div class="px-6 py-24 rounded-md bg-base-200 p-12">
@@ -15,12 +15,12 @@ permalink: /achievements/
                  class="flex w-full">
 
                 <!-- Trigger -->
-                <div class="w-full rounded-md shadow-lg bg-white bg-opacity-50 grid grid-cols-4 gap-4 select-none cursor-pointer border-4 border-blue-300 italic shadow-inner p-4" x-on:click="open = true">
+                <div class="w-full rounded-md bg-white bg-opacity-50 grid grid-cols-4 gap-4 select-none cursor-pointer border-4 border-blue-300 italic shadow-inner p-4" x-on:click="open = true">
                     <div>
                         <div class="p-2 rounded-full shadow-lg bg-white aspect-square text-blue-400 flex justify-center items-center">
                             {% if item.issuer == 'IBM' %}
                                 {% svg "ibm-logo-svgrepo-com", "w-full" %}
-                            {% elif item.issuer == 'INSTITUTO CERVANTES'%}
+                            {% elif item.issuer == 'Instituto Cervantes'%}
                                 {% svg "instituto-cervantes", "w-full" %}
                             {% elif item.issuer == 'Pearson EDEXCEL' %}
                                 {% svg "pearson-logo", "w-full" %}
@@ -33,7 +33,7 @@ permalink: /achievements/
                             {% endif %}
                         </div>
                     </div>
-                    <div class="col-span-3 flex flex-col gap-4">
+                    <div class="col-span-3 flex flex-col justify-between">
                         <p>{{ item.name }}</p>
                         <p>{{ item.issuer }}</p>
                         <p class="mb-0 text-xs">Earned {{ item.issueDate | readableDate("LLLL dd, yyyy") }}</p>
@@ -63,11 +63,11 @@ permalink: /achievements/
                             <!-- Content -->
                             {% if item.link != "" %}
                                 <div class="gap-2">
-                                    <a target="_blank" href={{ item.link }}><figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
+                                    <a target="_blank" href={{ item.link }}><figure><img src="../img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
                                     <p class="text-center text-sm"><a class="link text-blue-400 cursor-pointer" target="_blank" href={{ item.link }}>Verify over here</a></p>
                                 </div>
                             {% else %}
-                                <figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}"></figure>
+                                <figure><img src="../img/certificates/{{ item.img }}" alt="{{ item.name }}"></figure>
                             {% endif %}
                             <!-- Buttons -->
                             <span class="absolute top-2 right-2 cursor-pointer btn btn-ghost btn-circle" x-on:click="open = false">

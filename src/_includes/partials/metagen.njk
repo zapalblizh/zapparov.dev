@@ -1,0 +1,22 @@
+{% if rootIndex %}
+  {% set permalink = '/' %}
+  {% set title = title + ' | ' + metadata.author.name %}
+{% endif %}
+
+{% if permalink|includes('/contacts/') %}
+  {% set permalink = '/contacts/' %}
+  {% set title = title + ' | ' + metadata.author.name %}
+{% endif %}
+
+
+{% if permalink|includes('/achievements/') %}
+  {% set permalink = '/achievements/' %}
+  {% set title = title + ' | ' + metadata.author.name %}
+{% endif %}
+
+{% metagen
+  title=title or metadata.title,
+  desc=desc or metadata.desc,
+  url=metadata.url + permalink,
+  name=metadata.author.name
+%}
