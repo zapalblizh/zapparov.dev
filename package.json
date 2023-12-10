@@ -53,7 +53,7 @@
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
     "concurrently": "^8.0.1",
-    "daisyui": "^2.52.0",
+    "daisyui": "^4.4.17",
     "dotenv": "^16.3.1",
     "eleventy-plugin-feathericons": "^1.0.1",
     "eleventy-plugin-metagen": "^1.7.11",
