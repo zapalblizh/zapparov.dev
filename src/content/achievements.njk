@@ -63,7 +63,7 @@ permalink: /achievements/
                             <!-- Content -->
                             {% if item.link != "" %}
                                 <div class="gap-2">
-                                    <a target="_blank" href={{ item.link }}><figure>{% image "../img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure></a>
+                                    <a target="_blank" href={{ item.link }}><figure>{% image "/img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure></a>
                                     <div class="flex items-center justify-center pt-5">
                                       <a class="btn btn-md lg:btn-lg bg-blue-700 hover:bg-blue-600 text-white"
                                          target="_blank" href="{{ item.link }}">
@@ -72,7 +72,7 @@ permalink: /achievements/
                                     </div>
                                 </div>
                             {% else %}
-                                <figure>{% image "../img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure>
+                                <figure>{% image "/img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure>
                             {% endif %}
                             <!-- Buttons -->
                             <span class="absolute top-2 right-2 cursor-pointer btn btn-ghost btn-circle" x-on:click="open = false">
