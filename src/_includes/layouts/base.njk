@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data="xDOM">
+<html lang="en" data-theme="dark" :class="theme.name" x-data="xDOM">
   <head>
     {% include "partials/metagen.njk" %}
     {% include "partials/scripts-head.njk" %}
@@ -12,7 +12,7 @@
 
     {% block head %}{% endblock %}
   </head>
-  <body class="antialiased">
+  <body class="bg-skin dark:text-white dark:bg-carbon antialiased">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDCLTSV"
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

@@ -2,6 +2,7 @@
 
 module.exports = {
   content: ['./src/**/*.njk', './src/**/*.md'],
+  darkMode: "class",
   theme: {
     extend: {
       typography: {
@@ -23,7 +24,17 @@ module.exports = {
         current: "currentColor",
         inherit: "inherit",
         white: "#fff",
-
+        black: "#000",
+        carbon: {
+          500: "#191919",
+          DEFAULT: "#191919",
+        },
+        skin: {
+          500: "#ECE3CA",
+          600: "#E5D8B4",
+          700: "#D9C29A",
+          DEFAULT: "#ECE3CA",
+        }
       },
       aspectRatio: {
         auto: "auto",
