@@ -5,28 +5,22 @@ layout: base.njk
 permalink: /
 ---
 
-<div class="container bg-skin-600 dark:bg-zinc-800 rounded-xl mx-auto flex items-center justify-between px-6 py-24 sm:py-32 lg:px-0">
+<div class="container bg-skin-600 dark:bg-zinc-800 rounded-xl mx-auto flex items-center justify-between px-6 py-8 sm:py-32 lg:px-0">
 
-  <div class="grid items-center justify-center grid-cols-2 px-6">
-    <div class="prose">
-      <h1>About Me</h1>
+  <div class="grid gap-x-8 items-center justify-center grid-cols-1 md:grid-cols-2 md:px-6">
+    <div class="order-last md:order-first prose">
+      <h1 class="text-3xl sm:text-4xl text-center md:text-start">About Me</h1>
 
-      I'm 17 years old and in the span of 2 years, I've been learning programming and gaining experience in frameworks such as Node.js, Alpine.js, Nunjucks and TailwindCSS. I've been creating static sites using Eleventy with Netlify, but later on migrated to Cloudflare.
+      <p>
+        My name is Aleksandr Zapparov and I'm 17 years old.
+        I'm a self-taught web developer and so far, i've acquired experience in HTML, CSS, Javascript, Node.js, Alpine.js, Nunjucks, TailwindCSS, Eleventy, Netlify, Cloudflare, Hubspot CMS, HubL and GSAP.
+      </p>
 
-      Between 2022 and 2023, I started my Journey with learning HTML, CSS and Javascript and then focused on completing the IBM Full Stack Software Developer Professional Certificate.
-
-      Then, at the beginning of 2024, I started gaining knowledge about how to use Hubspot CMS and HubL.
-
-      I have completed the Hubspot CMS for Developers Certification and the Hubspot CMS for Developers II Certification.
-
-      Apart from this, I've been side learning how to animate my websites using GSAP along with its ScrollTrigger capabilities.
-
-      I really love chess and puzzles, and in my extra time, I spend working on my chess ability and getting stronger.
+      <p>In my free time, I love to play chess, solve puzzles, play video games and gain new knowledge and news about technological news.</p>
     </div>
-    <div>
-      {% image "../assets/img/zapalblizh.jpeg", "Picture of Aleksandr Zapparov", [360, 425, 768],
-        "rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]", "(min-width: 360px)" %}
-    </div>
+
+    {% image "../assets/img/zapalblizh.jpeg", "Picture of Aleksandr Zapparov", [360, 425, 768],
+      "rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]", "(min-width: 360px)" %}
   </div>
 
 

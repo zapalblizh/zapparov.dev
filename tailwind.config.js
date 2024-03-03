@@ -64,7 +64,7 @@ module.exports = {
           "@apply px-4 max-w-screen-2xl mx-auto": {},
         },
         ".prose": {
-          "@apply max-w-4xl mx-auto": {},
+          "@apply max-w-4xl mx-auto text-base md:text-lg dark:text-white dark:prose-h1:text-white": {},
         },
       });
     },
