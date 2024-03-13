@@ -3,12 +3,6 @@
   {% set title = title + ' | ' + metadata.author.name %}
 {% endif %}
 
-{% if permalink|includes('/contacts/') %}
-  {% set permalink = '/contacts/' %}
-  {% set title = title + ' | ' + metadata.author.name %}
-{% endif %}
-
-
 {% if permalink|includes('/achievements/') %}
   {% set permalink = '/achievements/' %}
   {% set title = title + ' | ' + metadata.author.name %}
