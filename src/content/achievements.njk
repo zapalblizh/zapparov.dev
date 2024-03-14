@@ -5,78 +5,84 @@ layout: base.njk
 permalink: /achievements/
 ---
 <div class="w-full mx-0 sm:container bg-skin-600 sm:rounded-md dark:bg-zinc-800 sm:mx-auto py-8">
-    <div class="text-center pb-6">
-        <p class="text-3xl font-bold tracking-tight sm:text-4xl">My Certificates</p>
-    </div>
-    <div class="max-w-md lg:max-w-4xl container grid items-stretch justify-center grid-cols-1 lg:grid-cols-2 gap-8">
-        {%- for item in certificates -%}
-            <div x-data="{ open: false }" x-on:keydown.escape.prevent.stop="open = false">
+  <div class="text-center pb-6">
+    <p class="text-3xl font-bold tracking-tight sm:text-4xl">My Certificates</p>
+  </div>
 
-              <div class="rounded-md bg-white bg-opacity-50 select-none cursor-pointer border-4 border-blue-300 italic shadow-inner p-4" x-on:click="open = true">
-                <div class="flex items-center gap-4">
-                  <div class="flex items-center rounded-full shadow-lg bg-white aspect-square">
-                    <div class="p-2 text-blue-400 flex justify-center items-center {% if item.issuer === "Instituto Cervantes" %} scale-90 {% endif %}">
-                      {% if item.issuerSVG === undefined %}
-                        {% svg "certificate", item.classes + " size-12" %}
-                      {% else %}
-                        {% svg item.issuerSVG|replace('.svg', ''), item.classes + " size-12" %}
-                      {% endif %}
-                    </div>
-                  </div>
+  <div class="max-w-md lg:max-w-4xl container grid items-stretch justify-center grid-cols-1 lg:grid-cols-2 gap-8">
+    {%- for item in certificates -%}
+      <div x-data="{ open: false }" x-on:keydown.escape.prevent.stop="open = false">
+        <!-- Certificate Panels -->
+        <div
+          class="rounded-md bg-white bg-opacity-50 select-none cursor-pointer border-4 border-blue-300 italic shadow-inner p-4"
+          x-on:click="open = true">
 
-                  <div class="flex flex-col justify-between">
-                    <p class="font-semibold text-md" >{{ item.name }}</p>
-                    <p class="mb-0 text-xs">Earned {{ item.issueDate | readableDate("LLLL dd, yyyy") }}</p>
-                  </div>
-                </div>
+          <div class="flex items-center gap-4">
+
+            <div class="flex items-center rounded-full shadow-lg bg-white aspect-square">
+
+              <div class="p-2 text-blue-400 flex justify-center items-center
+                           {% if item.issuer === "Instituto Cervantes" %} scale-90 {% endif %}">
+
+                {% if item.issuerSVG === undefined %}
+                  {% svg "certificate", item.classes + " size-12" %}
+                {% else %}
+                  {% svg item.issuerSVG|replace('.svg', ''), item.classes + " size-12" %}
+                {% endif %}
+
               </div>
 
             </div>
-        {% endfor %}
-    </div>
-</div>
 
-{#
-  TODO: readd this later
-  <!-- Modal -->
-                <div
-                  x-show="open"
-                  style="display: none"
-                  role="dialog"
-                  aria-modal="true"
-                  x-id="['modal-title']"
-                  :aria-labelledby="$id('modal-title')"
-                  class="fixed inset-0 z-10 overflow-y-auto"
-                >
-                  <!-- Overlay -->
-                  <div x-show="open" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
+            <div class="flex flex-col justify-between">
+              <p class="font-semibold text-md">{{ item.name }}</p>
+              <p class="mb-0 text-xs">Earned {{ item.issueDate | readableDate("LLLL dd, yyyy") }}</p>
+            </div>
 
-                  <!-- Panel -->
-                  <div x-show="open" x-transition
-                       x-on:click="open = false"
-                       class="relative flex min-h-screen items-center justify-center p-4">
-                    <div x-on:click.stop
-                         class="relative w-full max-w-2xl overflow-y-auto rounded-xl bg-base-200 p-12 shadow-lg">
+          </div>
 
-                      <!-- Content -->
-                      {% if item.link != "" %}
-                        <div class="gap-2">
-                          <a target="_blank" href={{ item.link }}><figure>{% image "/img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure></a>
-                          <div class="flex items-center justify-center pt-5">
-                            <a class="btn btn-md lg:btn-lg bg-blue-700 hover:bg-blue-600 text-white"
-                               target="_blank" href="{{ item.link }}">
-                              Verify The Certificate Here
-                            </a>
-                          </div>
-                        </div>
-                      {% else %}
-                        <figure>{% image "/img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure>
-                      {% endif %}
-                      <!-- Buttons -->
-                      <span class="absolute top-2 right-2 cursor-pointer btn btn-ghost btn-circle" x-on:click="open = false">
-                        {% svg "x", "w-5 h-5" %}
-                      </span>
-                    </div>
+        </div>
+
+        <!-- Toggle Panel -->
+        <div x-show="open"
+             style="display: none"
+             role="dialog"
+             aria-modal="true"
+             :aria-labelledby="$id('modal-title')"
+             class="fixed inset-0 z-10 overflow-y-auto">
+
+          <div x-transition x-on:click="open = false"
+               class="relative flex min-h-screen items-center justify-center p-4">
+
+            <div class="relative w-full max-w-2xl overflow-y-auto rounded-xl bg-base-200 p-12 shadow-lg">
+
+              <!-- Content -->
+              {% if item.link != "" %}
+
+                <div class="gap-2">
+                  <a target="_blank" href={{ item.link }}>
+                    <figure>{% image "/img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure>
+                  </a>
+
+                  <div class="flex items-center justify-center pt-5">
+                    <a class="btn btn-md lg:btn-lg bg-blue-700 hover:bg-blue-600 text-white"
+                       target="_blank" href="{{ item.link }}">
+                      Verify The Certificate Here
+                    </a>
                   </div>
+
                 </div>
-#}
+
+              {% else %}
+                <figure>{% image "/img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure>
+              {% endif %}
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    {% endfor %}
+  </div>
+</div>
