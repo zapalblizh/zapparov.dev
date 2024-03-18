@@ -37,6 +37,10 @@ module.exports = {
         },
         red: {
           100: "#CF4037"
+        },
+        pale: {
+          500: "#dddddd",
+          DEFAULT: "#dddddd"
         }
       },
       aspectRatio: {
