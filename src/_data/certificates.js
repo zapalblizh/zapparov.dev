@@ -94,7 +94,7 @@ const certificates = [
     name: "DELE Level B2",
     issuer: "Instituto Cervantes",
     issuerSVG: "instituto-cervantes.svg",
-    classes: "scale-90",
+    classes: "text-red-100 scale-90",
     issueDate: "2022-10-13",
     link: "",
     img: "DELE_B2.png"

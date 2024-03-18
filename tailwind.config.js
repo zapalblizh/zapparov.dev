@@ -32,8 +32,11 @@ module.exports = {
         skin: {
           500: "#ECE3CA",
           600: "#E5D8B4",
-          700: "#D9C29A",
+          700: "#ADA17F",
           DEFAULT: "#ECE3CA",
+        },
+        red: {
+          100: "#CF4037"
         }
       },
       aspectRatio: {
