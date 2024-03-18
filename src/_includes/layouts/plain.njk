@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" :class="theme.name" x-data="xDOM">
+  <head>
+    {% include "partials/metagen.njk" %}
+    {% include "partials/scripts-head.njk" %}
+    {% include "partials/google-tag.njk" %}
+
+    <!-- Plausible Integration -->
+    <script defer data-domain="zapparov.dev" src="https://plausible.io/js/script.js"></script>
+    <!-- End Plausible Integration -->
+    <link rel="stylesheet" href="/css/styles.css"/>
+
+    {% block head %}{% endblock %}
+  </head>
+
+  <body class="bg-skin dark:text-white dark:bg-carbon antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDCLTSV"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="mx-auto sm:px-8 max-w-7xl">
+
+      <main class="my-8">
+        {% block content %}
+          {{ content | safe }}
+        {% endblock %}
+      </main>
+
+    </div>
+  <script defer src="/js/scripts.js"></script>
+  </body>
+</html>
