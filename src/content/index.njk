@@ -5,11 +5,11 @@ layout: base.njk
 permalink: /
 ---
 
-<div class="container bg-skin-600 dark:bg-zinc-800 rounded-xl mx-auto flex items-center justify-between px-6 py-8 sm:py-32 lg:px-0">
+<div class="container flex justify-center bg-skin-600 dark:bg-zinc-800 rounded-xl mx-auto px-6 py-8 sm:py-32 lg:px-0">
 
-  <div class="grid gap-x-8 items-center justify-center grid-cols-1 md:grid-cols-2 md:px-6">
-    <div class="order-last md:order-first prose">
-      <h1 class="text-3xl sm:text-4xl text-center md:text-start">About Me</h1>
+  <div class="flex flex-col items-center justify-center lg:flex-row gap-x-8 md:px-6">
+    <div class="max-w-sm order-last lg:order-first prose">
+      <h1 class="text-3xl sm:text-4xl text-center lg:text-start my-6">About Me</h1>
 
       <p>
         My name is Aleksandr Zapparov and I'm 17 years old.
@@ -19,8 +19,8 @@ permalink: /
       <p>In my free time, I love to play chess, solve puzzles, play video games and gain new knowledge and news about technological news.</p>
     </div>
 
-    {% image "../assets/img/zapalblizh.jpeg", "Picture of Aleksandr Zapparov", [360, 425, 768],
-      "rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]", "(min-width: 360px)" %}
+    {% image "../assets/img/zapalblizh.jpeg", "Picture of Aleksandr Zapparov", [360],
+      "mx-auto rounded-md" %}
   </div>
 
 
