@@ -1,8 +1,11 @@
-Hello, welcome to my website !
+I'm 17 years old and in the span of 2 years, I've been learning programming and gaining experience in frameworks such as Node.js, Alpine.js, Nunjucks and TailwindCSS. I've been creating static sites using Eleventy with Netlify, but later on migrated to Cloudflare.
 
-My name is Aleksandr Zapparov and I'm aspiring to become a programmer.
+Between 2022 and 2023, I started my Journey with learning HTML, CSS and Javascript and then focused on completing the IBM Full Stack Software Developer Professional Certificate. 
 
-I'm 16 years old and my favourite passtimes are chess and gaming.
+Then, at the beginning of 2024, I started gaining knowledge about how to use Hubspot CMS and HubL. 
 
-I don't know what else to say, but check the website out if you're interested.
+I have completed the Hubspot CMS for Developers Certification and the Hubspot CMS for Developers II Certification. 
 
+Apart from this, I've been side learning how to animate my websites using GSAP along with its ScrollTrigger capabilities.
+
+I really love chess and puzzles, and in my extra time, I spend working on my chess ability and getting stronger.
