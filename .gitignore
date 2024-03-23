@@ -152,16 +152,3 @@ Temporary Items
 NOTEPAD.txt
 NOTEPAD.js
 NOTEPAD
-
-# Netlify stuff
-.netlify
-
-netlify/functions/onrequest/**
-!netlify/functions/onrequest/index.js
-
-netlify/functions/dynamic/**
-!netlify/functions/dynamic/index.js
-
-netlify/functions/serverless/**
-!netlify/functions/serverless/index.js
-.vercel

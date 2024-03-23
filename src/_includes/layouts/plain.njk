@@ -12,14 +12,14 @@
 
     {% block head %}{% endblock %}
   </head>
-  <body class="bg-skin dark:text-white dark:bg-carbon antialiased">
+
+  <body class="bg-skin dark:text-pale dark:bg-carbon antialiased">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDCLTSV"
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="mx-auto sm:px-8 max-w-7xl">
 
-      {% include "partials/header.njk" %}
+    <div class="mx-auto sm:px-8 max-w-7xl">
 
       <main class="my-8">
         {% block content %}
@@ -27,9 +27,7 @@
         {% endblock %}
       </main>
 
-      {% include "partials/footer.njk" %}
-
     </div>
-    <script defer src="/js/scripts.js"></script>
+  <script defer src="/js/scripts.js"></script>
   </body>
 </html>

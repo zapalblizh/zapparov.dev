@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
     });
 
     const getSvgContent = function (fileName, classes = '') {
-        const relativeFilePath = `./src/svg/${fileName}.svg`;
+        const relativeFilePath = `./src/assets/svg/${fileName}.svg`;
         let data = fs.readFileSync(relativeFilePath,
             function (err, contents) {
                 if (err) return err

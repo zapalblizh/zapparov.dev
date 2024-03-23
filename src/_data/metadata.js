@@ -9,7 +9,7 @@ module.exports = {
     },
     author: {
         name: "Aleksandr Zapparov",
-        email: "alexander@zapparov.co.uk",
+        email: "alexander@zapparov.dev",
         url: "https://zapparov.dev" || "http://localhost:8080" + "/about/",
     },
 };

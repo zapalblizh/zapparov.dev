@@ -5,48 +5,22 @@ layout: base.njk
 permalink: /
 ---
 
-<div class="isolate px-6 py-24 sm:py-32 lg:px-0 rounded-md bg-base-200">
+<div class="container flex justify-center bg-skin-600 dark:bg-zinc-800 rounded-xl mx-auto px-6 py-8 sm:py-32 lg:px-0">
 
-  <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+  <div class="flex flex-col items-center justify-center lg:flex-row gap-x-8 md:px-6">
+    <div class="max-w-sm order-last lg:order-first prose">
+      <h1 class="text-3xl sm:text-4xl text-center lg:text-start my-6">About Me</h1>
 
-    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-      <div class="lg:pr-4">
-        <div class="lg:max-w-lg">
-          <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Hello There!!</p>
-          <h1 class="mt-6 text-xl leading-8">Welcome to my website! My name is Aleksandr Zapparov</h1>
-        </div>
-      </div>
+      <p>
+        My name is Aleksandr Zapparov and I'm 17 years old.
+        I'm a self-taught web developer and so far, i've acquired experience in HTML, CSS, Javascript, Node.js, Alpine.js, Nunjucks, TailwindCSS, Eleventy, Netlify, Cloudflare, Hubspot CMS, HubL and GSAP.
+      </p>
+
+      <p>In my free time, I love to play chess, solve puzzles, play video games and gain new knowledge and news about technological news.</p>
     </div>
 
-    <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-      {% image "../img/zapalblizh.jpeg", "Picture of Aleksandr Zapparov", [360, 425, 768],
-        "rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]", "(min-width: 360px)" %}
-    </div>
-
-    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-      <div class="lg:pr-4">
-        <div class="max-w-xl text-base leading-7 lg:max-w-lg">
-
-          <p>
-            At the age of 17, I’ve finished earlier my high school and university preparations
-            A level Program of British System of Education with high grades. This led me to
-            learning programming and achieving certificates as well as experience with HTML,
-            CSS, JavaScript and learning about how to use some of the JavaScript frameworks such as Node.js,
-            React and the latest, Alpine.js. I'm also learning how to create static sites by using eleventy,
-            with this project being an example of it.
-          </p>
-
-          <p class="mt-8">
-            I have completed the <a class="link text-blue-400 cursor-pointer" target="_blank" href="https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer">IBM Full Stack Software Developer Professional Certificate</a>
-            and I'm aspiring to complete more certificates as time goes on.
-            I'm very interested in chess and complex puzzles apart from programming and
-            I hope in the future I will become a computer games programmer or a software engineer.
-          </p>
-
-        </div>
-      </div>
-    </div>
-
+    {% image "../assets/img/zapalblizh.jpeg", "Picture of Aleksandr Zapparov", [360],
+      "mx-auto rounded-md" %}
   </div>
 
 </div>
