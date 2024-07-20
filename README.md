@@ -6,6 +6,6 @@ Then, at the beginning of 2024, I started gaining knowledge about how to use Hub
 
 I have completed the Hubspot CMS for Developers Certification and the Hubspot CMS for Developers II Certification. 
 
-Apart from this, I've been side learning how to animate my websites using GSAP along with its ScrollTrigger capabilities.
+In June 2024, I've completed the Harvard CS50’s Introduction to Computer Science course.
 
 I really love chess and puzzles, and in my extra time, I spend working on my chess ability and getting stronger.
