@@ -22,7 +22,7 @@ permalink: /achievements/
             <div class="flex items-center rounded-full shadow-lg bg-pale aspect-square">
 
               <div class="p-2 text-black flex justify-center items-center
-                           {% if item.issuer === "Instituto Cervantes" %} scale-90 {% endif %}">
+                {% if item.issuer === "Instituto Cervantes" or item.issuer === "CIE" %} scale-90 {% endif %}">
 
                 {% if item.issuerSVG === undefined %}
                   {% svg "certificate", item.classes + " size-12" %}

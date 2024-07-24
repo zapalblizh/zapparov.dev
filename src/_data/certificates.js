@@ -153,6 +153,13 @@ const certificates = [
     issueDate: "2024-02-15",
     link: "https://app.hubspot.com/academy/achievements/8yqzk7ct/en/1/aleksandr-zapparov/hubspot-cms-for-developers-ii-best-practices",
     img: "Hubspot-CMS-for-Developers-II-Certificate.png",
+  }, {
+    name: "CS50's Introduction to Computer Science",
+    issuer: "Harvard Online (edX)",
+    issuerSVG: "harvard-university.svg",
+    issuerDate: "2024-07-02",
+    link: "https://courses.edx.org/certificates/0bf55619b2924f1ba0a7d561c116bf71",
+    img: "Harvard-CS50-Introduction-to-Computer-Science.png"
   }
 ];
 
