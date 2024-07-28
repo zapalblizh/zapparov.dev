@@ -156,7 +156,7 @@ const certificates = [
   }, {
     name: "CS50's Introduction to Computer Science",
     issuer: "Harvard Online (edX)",
-    issuerSVG: "harvard-university.svg",
+    issuerSVG: "harvard.svg",
     issuerDate: "2024-07-02",
     link: "https://courses.edx.org/certificates/0bf55619b2924f1ba0a7d561c116bf71",
     img: "Harvard-CS50-Introduction-to-Computer-Science.png"
