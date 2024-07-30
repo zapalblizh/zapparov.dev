@@ -1,99 +1,94 @@
-const shortcodes = require("./cfg/shortcodes");
-const plugins = require("./cfg/plugins");
-const filters = require("./cfg/filters");
-const htmlmin = require('html-minifier')
-const {DateTime} = require("luxon");
-const fs = require('fs')
+import {minify} from "html-minifier";
 
-module.exports = function (eleventyConfig) {
-    Object.keys(plugins).forEach((pluginName) => {
-        plugins[pluginName](eleventyConfig);
-    });
+import shortcodes from "./cfg/shortcodes";
+import plugins from "./cfg/plugins";
+import filters from "./cfg/filters";
+import {DateTime} from "luxon";
+import fs from "fs";
 
-    Object.keys(shortcodes).forEach((shortcodeName) => {
-        shortcodes[shortcodeName](eleventyConfig);
-    });
+export default async function (eleventyConfig) {
+  Object.keys(plugins).forEach((pluginName) => {
+    plugins[pluginName](eleventyConfig);
+  });
 
-    Object.keys(filters).forEach((filterName) => {
-        eleventyConfig.addFilter(filterName, filters[filterName]);
-    });
+  Object.keys(shortcodes).forEach((shortcodeName) => {
+    shortcodes[shortcodeName](eleventyConfig);
+  });
 
-    const getSvgContent = function (fileName, classes = '') {
-        const relativeFilePath = `./src/assets/svg/${fileName}.svg`;
-        let data = fs.readFileSync(relativeFilePath,
-            function (err, contents) {
-                if (err) return err
-                return contents
-            });
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName]);
+  });
 
-        data = data.toString('utf8');
+  const getSvgContent = function (fileName, classes = '') {
+    const relativeFilePath = `./src/assets/svg/${fileName}.svg`;
+    let data = fs.readFileSync(relativeFilePath,
+      function (err, contents) {
+        if (err) return err
+        return contents
+      });
 
-        if (classes) {
-            data = data.replace("<svg", `<svg class="${classes}"`)
-        }
-
-        return data
+    if (classes) {
+      data = data.replace("<svg", `<svg class="${classes}"`)
     }
 
-    eleventyConfig.addShortcode("svg", getSvgContent);
+    return data.toString('utf8');
+  }
 
-    /**
-     * HTML Minifier for production builds
-     */
-    eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
-        if (
-            process.env.ELEVENTY_ENV == 'production' &&
-            outputPath &&
-            outputPath.endsWith('.html')
-        ) {
-            let minified = htmlmin.minify(content, {
-                useShortDoctype: true,
-                removeComments: true,
-                collapseWhitespace: true,
-            })
-            return minified
-        }
+  eleventyConfig.addShortcode("svg", getSvgContent);
 
-        return content
-    })
+  /**
+   * HTML Minifier for production builds
+   */
+  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+    if (
+      process.env.ELEVENTY_ENV === "production" &&
+      this.page.outputPath &&
+      this.page.outputPath.endsWith(".html")
+    ) {
+      return minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      });
+    }
 
-    eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-        const date = DateTime.fromJSDate(new Date(dateObj), {zone: zone || "utc"}).toFormat(format || "dd LLLL, yyyy");
-        // console.log(typeof date, date);
-        return date;
-    });
+    return content
+  })
 
-    return {
-        // Control which files Eleventy will process
-        // e.g.: *.md, *.njk, *.html, *.liquid
-        templateFormats: ["md", "njk"],
+  eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
+    return DateTime.fromJSDate(new Date(dateObj), {zone: zone || "utc"}).toFormat(format || "dd LLLL, yyyy");
+  });
 
-        // Pre-process *.md files with: (default: `liquid`)
-        markdownTemplateEngine: "njk",
+  return {
+    // Control which files Eleventy will process
+    // e.g.: *.md, *.njk, *.html, *.liquid
+    templateFormats: ["md", "njk"],
 
-        // Pre-process *.html files with: (default: `liquid`)
-        htmlTemplateEngine: "njk",
+    // Pre-process *.md files with: (default: `liquid`)
+    markdownTemplateEngine: "njk",
 
-        // These are all optional:
-        dir: {
-            input: "./src/content", // default: "."
-            output: "./_site", // default: "_site"
-            includes: "../_includes", // default: "_includes"
-            layouts: "../_includes/layouts", // default: "_layouts"
-            data: "../_data", // default: "_data"
-        },
+    // Pre-process *.html files with: (default: `liquid`)
+    htmlTemplateEngine: "njk",
 
-        // -----------------------------------------------------------------
-        // Optional items:
-        // -----------------------------------------------------------------
+    // These are all optional:
+    dir: {
+      input: "./src/content", // default: "."
+      output: "./_site", // default: "_site"
+      includes: "../_includes", // default: "_includes"
+      layouts: "../_includes/layouts", // default: "_layouts"
+      data: "../_data", // default: "_data"
+    },
 
-        // If your site deploys to a subdirectory, change `pathPrefix`.
-        // Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
+    // -----------------------------------------------------------------
+    // Optional items:
+    // -----------------------------------------------------------------
 
-        // When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
-        // it will transform any absolute URLs in your HTML to include this
-        // folder name and does **not** affect where things go in the output folder.
-        pathPrefix: "/",
-    };
-};
+    // If your site deploys to a subdirectory, change `pathPrefix`.
+    // Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
 
+    // When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
+    // it will transform any absolute URLs in your HTML to include this
+    // folder name and does **not** affect where things go in the output folder.
+    pathPrefix: "/",
+  };
+}

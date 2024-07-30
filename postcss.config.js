@@ -1,8 +1,15 @@
-module.exports = {
-    plugins: [
-        require("postcss-easy-import"),
-        require("postcss-discard-comments")({ removeAll: true }),
-        require("autoprefixer"),
-        require("postcss-merge-rules"),
-    ],
+import easyImport from "postcss-easy-import/index.js";
+import discardComments from "postcss-discard-comments";
+import tailwind from "tailwindcss";
+import autoprefixer from "autoprefixer";
+import mergeRules from "postcss-merge-rules";
+
+export default {
+  plugins: [
+    easyImport,
+    tailwind,
+    discardComments({ removeAll: true }),
+    autoprefixer,
+    mergeRules,
+  ],
 };
