@@ -2,35 +2,35 @@
  * Add Eleventy shortcodes here
  * https://www.11ty.dev/docs/shortcodes/
  */
-
-const path = require("path");
-const eleventyImage = require("@11ty/eleventy-img");
+import path from "path";
+import eleventyImage from "@11ty/eleventy-img";
+import fs from "fs";
 
 const relativeToInputPath = (inputPath, relativeFilePath) => {
     let split = inputPath.split("/");
     split.pop();
 
-    let absoluteFilePath = path.resolve(split.join(path.sep), relativeFilePath);
+    let relativePath = path.resolve(split.join(path.sep), relativeFilePath);
 
     if (relativeFilePath.startsWith("/")) {
-        absoluteFilePath = path.resolve("./src/assets" + relativeFilePath);
+        relativePath = path.resolve("./src/assets" + relativeFilePath);
     }
 
-    if (relativeFilePath.startsWith("./temp/")) {
-        absoluteFilePath = path.resolve(relativeFilePath);
-    }
-
-    // console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-    // console.log(absoluteFilePath)
-    // console.log(inputPath)
-    // console.log(relativeFilePath)
-    // console.log(split.join(path.sep))
-    // console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-
-    return absoluteFilePath;
+    return relativePath;
 };
 
-module.exports = {
+const getSvgContent = function (fileName, classes = '') {
+  const relativeFilePath = `./src/assets/svg/${fileName}.svg`;
+  let data = fs.readFileSync(relativeFilePath, 'utf8');
+
+  if (classes) {
+    // console.log(data);
+    data = data.replace("<svg", `<svg class="${classes}"`);
+    return data.toString('utf8');
+  }
+}
+
+export default {
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
     image: (eleventyConfig) => {
@@ -64,6 +64,10 @@ module.exports = {
                 return eleventyImage.generateHTML(metadata, imageAttributes);
             }
         );
+    },
+
+    svg: (eleventyConfig) => {
+      eleventyConfig.addShortcode("svg", getSvgContent);
     },
 
     imagePath: (eleventyConfig) => {},

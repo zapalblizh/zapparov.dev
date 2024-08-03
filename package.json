@@ -2,6 +2,7 @@
   "name": "zapparov.dev",
   "version": "1.0.0",
   "description": "Aleksandr Zapparov Website",
+  "type": "module",
   "scripts": {
     "clean": "rimraf './_site'",
     "postbuild": "npm run export:twconfig",

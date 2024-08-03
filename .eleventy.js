@@ -1,10 +1,9 @@
 import {minify} from "html-minifier";
 
-import shortcodes from "./cfg/shortcodes";
-import plugins from "./cfg/plugins";
-import filters from "./cfg/filters";
+import shortcodes from "./cfg/shortcodes.js";
+import plugins from "./cfg/plugins.js";
+import filters from "./cfg/filters.js";
 import {DateTime} from "luxon";
-import fs from "fs";
 
 export default async function (eleventyConfig) {
   Object.keys(plugins).forEach((pluginName) => {
@@ -18,23 +17,6 @@ export default async function (eleventyConfig) {
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName]);
   });
-
-  const getSvgContent = function (fileName, classes = '') {
-    const relativeFilePath = `./src/assets/svg/${fileName}.svg`;
-    let data = fs.readFileSync(relativeFilePath,
-      function (err, contents) {
-        if (err) return err
-        return contents
-      });
-
-    if (classes) {
-      data = data.replace("<svg", `<svg class="${classes}"`)
-    }
-
-    return data.toString('utf8');
-  }
-
-  eleventyConfig.addShortcode("svg", getSvgContent);
 
   /**
    * HTML Minifier for production builds

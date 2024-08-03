@@ -2,9 +2,9 @@
  * Add Eleventy filters here
  * https://www.11ty.dev/docs/filters/
  */
-const { DateTime, Duration } = require("luxon");
+import { DateTime, Duration } from "luxon";
 
-module.exports = {
+export default {
     titleSinPeriod: (value) => {
         return value.replace(/\.$/, "");
     },
@@ -16,32 +16,9 @@ module.exports = {
         );
     },
 
-    // Formats duration to hh:mm:ss or mm:ss
-    formatToLiquidCrystal: (duration) => {
-        if (duration >= 3600) {
-            return Duration.fromMillis(duration * 1000).toFormat("hh:mm:ss");
-        }
-
-        return Duration.fromMillis(duration * 1000).toFormat("mm:ss");
-    },
-
     // Changes ISO date to XX years/months/days/hours/minutes/seconds ago
     dateToRelative: (published) => {
         return DateTime.fromISO(published).toRelative();
-    },
-
-    // Filter to find most liked videos
-    mostLikedVideos: (videoCollection, excludeVideoId) => {
-        videoCollection = videoCollection.sort((a, b) => b.likes - a.likes);
-        videoCollection = videoCollection.filter(
-            (el) => el.videoId !== excludeVideoId
-        );
-        return videoCollection;
-    },
-
-    // Clean Thumbnail URL
-    cleanThumbnailUrl: (thumbnailUrl) => {
-        return thumbnailUrl.replace("https://i.ytimg.com", "");
     },
 
     // dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string

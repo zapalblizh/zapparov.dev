@@ -10,9 +10,8 @@ import pluginSpeculationRules from "eleventy-plugin-speculation-rules";
 import pluginRSS from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin as pluginImageTransform } from "@11ty/eleventy-img";
-
-const {EleventyHtmlBasePlugin} = require("@11ty/eleventy")
-const plugin = require("eleventy-plugin-svg-contents");
+import pluginSvgContents from "eleventy-plugin-svg-contents";
+import feather from "eleventy-plugin-feathericons";
 
 export default {
   // Drafts support
@@ -79,6 +78,10 @@ export default {
     eleventyConfig.addPlugin(pluginMetagen);
   },
 
+  Feather: (eleventyConfig) => {
+    eleventyConfig.addPlugin(feather);
+  },
+
   PhosphorIcons: (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginPhosphorIcons);
   },
@@ -104,7 +107,6 @@ export default {
 
   // {{ '/src/assets/images/icons/regular/activity.svg' | svgContents("h-8 w-8 text-amber") | safe }}
   svgContents: function (eleventyConfig) {
-    const plugin = require("eleventy-plugin-svg-contents");
-    eleventyConfig.addPlugin(plugin);
+    eleventyConfig.addPlugin(pluginSvgContents);
   },
 };
