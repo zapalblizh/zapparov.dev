@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     title: "Aleksandr Zapparov",
     url: "https://zapparov.dev" || "http://localhost:8080",
     language: "en",

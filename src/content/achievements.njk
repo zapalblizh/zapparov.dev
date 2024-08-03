@@ -61,7 +61,9 @@ permalink: /achievements/
 
                 <div class="gap-2">
                   <a target="_blank" href={{ item.link }}>
-                    <figure>{% image "/img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure>
+                    <figure>
+                      <img src="../assets/img/certificates/{{ item.img }}" alt="Certificate of {{ item.name }}" eleventy:widths="450" />
+                    </figure>
                   </a>
 
                   <div class="mt-10 flex items-center justify-center gap-x-6">
@@ -71,7 +73,9 @@ permalink: /achievements/
                 </div>
 
               {% else %}
-                <figure>{% image "/img/certificates/" + item.img, item.name, [360, 425, 768, 1024, 1440, 1980], "", "(min-width: 200px)" %}</figure>
+                <figure>
+                  <img src="../assets/img/certificates/{{ item.img }}" alt="Certificate of {{ item.name  }}" eleventy:widths="500"/>
+                </figure>
               {% endif %}
 
             </div>

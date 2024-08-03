@@ -163,4 +163,4 @@ const certificates = [
   }
 ];
 
-module.exports = certificates;
+export default certificates;

@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 
-module.exports = {
+import typography from "@tailwindcss/typography";
+import forms from "@tailwindcss/forms";
+import aspectRatio from "@tailwindcss/aspect-ratio";
+import safeArea from "tailwindcss-safe-area";
+
+export default {
   content: ['./src/**/*.njk', './src/**/*.md'],
   darkMode: "class",
   theme: {
@@ -61,10 +66,10 @@ module.exports = {
     },
   },
   plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/aspect-ratio"),
-    require("tailwindcss-safe-area"),
+    typography,
+    forms,
+    aspectRatio,
+    safeArea,
     ({ addComponents, theme }) => {
       addComponents({
         ".container": {
