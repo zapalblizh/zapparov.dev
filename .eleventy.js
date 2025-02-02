@@ -1,4 +1,4 @@
-import {minify} from "html-minifier";
+import {minify} from "html-minifier-terser";
 
 import shortcodes from "./cfg/shortcodes.js";
 import plugins from "./cfg/plugins.js";
