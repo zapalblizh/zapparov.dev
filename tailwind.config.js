@@ -10,15 +10,6 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {
-              color: "#3366CC",
-            },
-          },
-        },
-      },
       borderRadius: {
         xs: "4px",
         sm: "6px",
@@ -75,8 +66,28 @@ export default {
         ".container": {
           "@apply px-4 max-w-screen-2xl mx-auto": {},
         },
+        "[data-theme=light] .prose": {
+          "--tw-prose-links": "#06c",
+          "--tw-prose-quote-borders": "#06c",
+          "--tw-prose-headings": "#222",
+        },
+        "[data-theme=dark] .prose": {
+          "--tw-prose-links": "#3366cc",
+          "--tw-prose-quote-borders": "#3366cc",
+          "--tw-prose-quotes": "#f2f2f2",
+          "--tw-prose-body": "#f2f2f2",
+          "--tw-prose-headings": "#f2f2f2",
+          "--tw-prose-bold": "#f2f2f2",
+        },
         ".prose": {
-          "@apply max-w-4xl mx-auto text-base md:text-lg dark:text-white dark:prose-h1:text-white": {},
+          "@apply text-base md:text-lg": {},
+        },
+        ".prose p": {
+          "@apply text-pretty": {},
+        },
+        '.prose :where(a):not(:where([class~="not-prose"] *))': {
+          textDecoration: "none",
+          "@apply hover:underline": {},
         },
       });
     },

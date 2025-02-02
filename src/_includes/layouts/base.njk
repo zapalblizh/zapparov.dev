@@ -12,7 +12,7 @@
 
     {% block head %}{% endblock %}
   </head>
-  <body class="bg-skin dark:text-white dark:bg-carbon antialiased">
+  <body class="bg-skin dark:bg-carbon antialiased">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDCLTSV"
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -21,10 +21,12 @@
 
       {% include "partials/header.njk" %}
 
-      <main class="my-8">
-        {% block content %}
-          {{ content | safe }}
-        {% endblock %}
+      <main class="my-12 grow">
+        <div class="container prose">
+          {% block content %}
+            {{ content | safe }}
+          {% endblock %}
+        </div>
       </main>
 
       {% include "partials/footer.njk" %}
