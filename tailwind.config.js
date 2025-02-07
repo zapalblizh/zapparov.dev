@@ -67,13 +67,13 @@ export default {
           "@apply px-4 max-w-screen-2xl mx-auto": {},
         },
         "[data-theme=light] .prose": {
-          "--tw-prose-links": "#06c",
-          "--tw-prose-quote-borders": "#06c",
+          "--tw-prose-links": "#222",
+          "--tw-prose-quote-borders": "#222",
           "--tw-prose-headings": "#222",
         },
         "[data-theme=dark] .prose": {
-          "--tw-prose-links": "#3366cc",
-          "--tw-prose-quote-borders": "#3366cc",
+          "--tw-prose-links": "#f2f2f2",
+          "--tw-prose-quote-borders": "#f2f2f2",
           "--tw-prose-quotes": "#f2f2f2",
           "--tw-prose-body": "#f2f2f2",
           "--tw-prose-headings": "#f2f2f2",
@@ -89,6 +89,9 @@ export default {
           textDecoration: "none",
           "@apply hover:underline": {},
         },
+        '.prose :where(span):not(:where([class~="not-prose"] *))': {
+          "@apply dark:text-white": {},
+        }
       });
     },
   ],

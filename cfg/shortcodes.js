@@ -25,7 +25,7 @@ const getSvgContent = function (fileName, classes = '') {
 
   if (classes) {
     // console.log(data);
-    data = data.replace("<svg", `<svg class="${classes}"`);
+    data = data.replace("<svg", `<svg class="${classes} dark:stroke-white"`);
     return data.toString('utf8');
   }
 }

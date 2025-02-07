@@ -1,5 +1,5 @@
 <header x-ref="header">
-  <nav class="bg-skin-600 dark:bg-zinc-800 md:rounded-md mx-auto flex container items-center justify-between sm:my-6 py-4" aria-label="Global">
+  <nav class="prose bg-skin-600 dark:bg-zinc-800 md:rounded-md mx-auto flex container items-center justify-between sm:my-6 py-4" aria-label="Global">
     <div class="achievements-btn">
       <button class="-my-2.5 flex items-center justify-center rounded-md p-2.5">
         <a href="/achievements/">{% svg "certificate", "size-7" %}</a>
@@ -13,8 +13,10 @@
             :aria-label="theme.dark ? 'Switch to light theme' : 'Switch to dark theme'"
             @click="toggleTheme()">
       <span class="sr-only" x-text="theme.dark ? 'Switch to light theme' : 'Switch to dark theme'">Switch to dark theme</span>
-      <span x-show="theme.dark">{% feather "sun", { "class": "size-7" } %}</span>
-      <span x-show="!theme.dark" x-cloak>{% feather "moon", { "class": "size-7" } %}</span>
+      <span x-show="theme.dark">{% svg "sun", "size-7" %}</span>
+      <span x-show="!theme.dark" x-cloak>{% svg "moon", "size-7" %}</span>
     </button>
   </nav>
 </header>
+
+{# TODO: Add tailwindcss classes for button & span #}
