@@ -4,7 +4,7 @@ description: Aleksandr Zapparov's Achievements
 layout: base.njk
 permalink: /achievements/
 ---
-<div class="w-full mx-0 sm:container bg-skin-600 sm:rounded-md dark:bg-zinc-800 sm:mx-auto py-8">
+<div class="w-full mx-0 bg-skin-600 sm:rounded-md dark:bg-zinc-800 sm:mx-auto py-8">
   <div class="text-center pb-6">
     <p class="text-3xl font-bold tracking-tight sm:text-4xl">My Certificates</p>
   </div>
@@ -34,8 +34,8 @@ permalink: /achievements/
 
             </div>
 
-            <div class="flex flex-col justify-between">
-              <p class="font-semibold text-md">{{ item.name }}</p>
+            <div class="flex flex-col justify-center min-h-24">
+              <p class="m-0 font-semibold text-md">{{ item.name }}</p>
               <p class="mb-0 text-xs">Earned {{ item.issueDate | readableDate("LLLL dd, yyyy") }}</p>
             </div>
 

@@ -64,7 +64,7 @@ export default {
     ({ addComponents, theme }) => {
       addComponents({
         ".container": {
-          "@apply px-4 max-w-screen-2xl mx-auto": {},
+          "@apply max-w-screen-2xl mx-auto": {},
         },
         "[data-theme=light] .prose": {
           "--tw-prose-links": "#222",
