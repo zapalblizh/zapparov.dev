@@ -5,9 +5,6 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf './_site'",
-    "postbuild": "npm run export:twconfig",
-    "view:twconfig": "npx tailwind-config-viewer -o",
-    "export:twconfig": "npx tailwind-config-viewer export ./_site/tw-config",
     "debug:11ty": "DEBUG=Eleventy* npx @11ty/eleventy",
     "watch:11ty": "npx @11ty/eleventy --serve --quiet",
     "build:11ty": "npx @11ty/eleventy",
