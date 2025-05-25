@@ -5,16 +5,16 @@ layout: base.njk
 permalink: /
 ---
 
-<section class="flex justify-center bg-skin-600 dark:bg-zinc-800 rounded-xl mx-auto px-6 sm:px-10 py-8 sm:py-32">
-  <div class="grid lg:grid-cols-3 gap-4 lg:gap-8">
-    <div class="prose col-span-2">
+<section class="flex justify-center bg-skin-600 dark:bg-zinc-800 sm:rounded-xl mx-auto px-6 sm:px-10 py-8 sm:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-16">
+    <div class="order-last lg:order-first col-span-2">
 
-      <h1 class="text-3xl sm:text-4xl text-center lg:text-start my-6">{{ aboutme.title }}</h1>
+      <h1 class="text-2xl sm:text-3xl text-center lg:text-start my-6">{{ aboutme.title }}</h1>
 
       {{ aboutme.description }}
     </div>
 
-    <div class="hidden lg:block">
+    <div class="order-first lg:order-last">
       <img class="mx-auto rounded-md" src="../assets/img/zapalblizh.jpeg" alt="Picture of Aleksandr Zapparov" />
     </div>
   </div>

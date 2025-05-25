@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/aspect-ratio';
+@plugin 'tailwindcss-safe-area';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+
+  --container-copy-xs: 25ch;
+  --container-copy-sm: 45ch;
+  --container-copy-md: 55ch;
+  --container-copy-lg: 65ch;
+  --container-copy-xl: 75ch;
+  --container-copy-2xl: 85ch;
+
+  --aspect-auto: auto;
+  --aspect-box: 1;
+  --aspect-landscape: 4/3;
+  --aspect-portrait: 3/4;
+  --aspect-video: 16/9;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius: 10px;
+
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-inherit: inherit;
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-carbon-500: #222;
+  --color-carbon: #191919;
+
+  --color-skin-50: #dddddd;
+  --color-skin-500: #ece3ca;
+  --color-skin-600: #e5d8b4;
+  --color-skin-700: #ada17f;
+  --color-skin: #ece3ca;
+
+  --color-red-100: #cf4037;
+}
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-(--breakpoint-2xl) mx-auto;
+  }
+
+  .prose :where(h1) {
+    @apply font-extrabold;
+  }
+
+  .prose {
+    @apply text-base md:text-lg;
+  }
+
+  .prose p {
+    @apply text-pretty;
+  }
+
+  .prose :where(a):not(:where([class~="not-prose"] *)) {
+    text-decoration: none;
+    @apply hover:underline;
+  }
+
+  .prose :where(span):not(:where([class~="not-prose"] *)) {
+    @apply dark:text-white;
+  }
+}
+
+[x-cloak] {
+    display: none !important;
+}

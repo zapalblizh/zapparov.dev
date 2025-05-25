@@ -4,12 +4,12 @@ description: Aleksandr Zapparov's Achievements
 layout: base.njk
 permalink: /achievements/
 ---
-<div class="w-full mx-0 bg-skin-600 sm:rounded-md dark:bg-zinc-800 sm:mx-auto py-8">
+<section class="w-full mx-0 bg-skin-600 sm:rounded-md dark:bg-zinc-800 sm:mx-auto py-8 sm:py-24">
   <div class="text-center pb-6">
     <p class="text-3xl font-bold tracking-tight sm:text-4xl">My Certificates</p>
   </div>
 
-  <div class="max-w-md lg:max-w-4xl container grid items-stretch justify-center grid-cols-1 lg:grid-cols-2 gap-8 text-pale">
+  <div class="max-w-md lg:max-w-4xl container grid items-stretch justify-center grid-cols-1 lg:grid-cols-2 gap-8 text-skin-50">
     {%- for item in certificates -%}
       <div x-data="{ open: false }" x-on:keydown.escape.prevent.stop="open = false">
         <!-- Certificate Panels -->
@@ -19,7 +19,7 @@ permalink: /achievements/
 
           <div class="flex items-center gap-4">
 
-            <div class="flex items-center rounded-full shadow-lg bg-pale aspect-square">
+            <div class="flex items-center rounded-full shadow-lg bg-skin-50 aspect-square">
 
               <div class="p-2 text-black flex justify-center items-center
                 {% if item.issuer === "Instituto Cervantes" or item.issuer === "CIE" %} scale-90 {% endif %}">
@@ -67,7 +67,7 @@ permalink: /achievements/
                   </a>
 
                   <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="{{ item.link }}" target="_blank" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Verify The Certificate Here</a>
+                    <a href="{{ item.link }}" target="_blank" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Verify The Certificate Here</a>
                   </div>
 
                 </div>
@@ -86,4 +86,4 @@ permalink: /achievements/
       </div>
     {% endfor %}
   </div>
-</div>
+</section>

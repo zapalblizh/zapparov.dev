@@ -4,18 +4,14 @@
     {% include "partials/metagen.njk" %}
     {% include "partials/scripts-head.njk" %}
     {% include "partials/firebird.njk" %}
-
-    <link rel="stylesheet" href="/css/styles.css"/>
-
-    {% block head %}{% endblock %}
   </head>
-  <body class="bg-skin dark:bg-carbon antialiased">
-    <div class="mx-auto sm:px-8 max-w-7xl">
+  <body class="bg-skin text-carbon-500 dark:text-skin-50 dark:bg-carbon antialiased prose h-full">
+    <div class="flex flex-col min-h-screen mx-auto sm:px-8 max-w-7xl">
 
       {% include "partials/header.njk" %}
 
       <main class="my-12 grow">
-        <div class="container prose">
+        <div class="container">
           {% block content %}
             {{ content | safe }}
           {% endblock %}
@@ -25,6 +21,6 @@
       {% include "partials/footer.njk" %}
 
     </div>
-    <script defer src="/js/scripts.js"></script>
+    <script defer src="/js/main.js"></script>
   </body>
 </html>
