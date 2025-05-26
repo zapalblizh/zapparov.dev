@@ -5,7 +5,6 @@
 
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import pluginSpeculationRules from "eleventy-plugin-speculation-rules";
-import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin as pluginImageTransform } from "@11ty/eleventy-img";
 import pluginSvgContents from "eleventy-plugin-svg-contents";
 
@@ -36,12 +35,6 @@ export default {
 
   SpeculationRules: (eleventyConfig) => {
     eleventyConfig.addPlugin(pluginSpeculationRules);
-  },
-
-  SyntaxHighlight: (eleventyConfig) => {
-    eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-      preAttributes: { tabindex: 0 },
-    });
   },
 
   EleventyHtmlBase: (eleventyConfig) => {
