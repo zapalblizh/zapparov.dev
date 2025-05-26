@@ -37,10 +37,6 @@ export default async function (eleventyConfig) {
     return content
   })
 
-  eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-    return DateTime.fromJSDate(new Date(dateObj), {zone: zone || "utc"}).toFormat(format || "dd LLLL, yyyy");
-  });
-
   return {
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid

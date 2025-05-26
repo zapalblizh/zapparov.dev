@@ -12,13 +12,12 @@ permalink: /achievements/
   <div class="max-w-md lg:max-w-4xl container grid items-stretch justify-center grid-cols-1 lg:grid-cols-2 gap-8 text-skin-50">
     {%- for item in certificates -%}
       <div x-data="{ open: false }" x-on:keydown.escape.prevent.stop="open = false">
+
         <!-- Certificate Panels -->
         <div
           class="rounded-md select-none cursor-pointer bg-skin-700 dark:bg-zinc-900 italic shadow-inner p-4"
           x-on:click="open = true">
-
           <div class="flex items-center gap-4">
-
             <div class="flex items-center rounded-full shadow-lg bg-skin-50 aspect-square">
 
               <div class="p-2 text-black flex justify-center items-center
@@ -29,18 +28,14 @@ permalink: /achievements/
                 {% else %}
                   {% svg item.issuerSVG|replace('.svg', ''), item.classes + " size-12" %}
                 {% endif %}
-
               </div>
-
             </div>
 
             <div class="flex flex-col justify-center min-h-24">
               <p class="m-0 font-semibold text-md">{{ item.name }}</p>
               <p class="mb-0 text-xs">Earned {{ item.issueDate | readableDate("LLLL d, yyyy") }}</p>
             </div>
-
           </div>
-
         </div>
 
         <!-- Toggle Panel -->
@@ -53,12 +48,10 @@ permalink: /achievements/
 
           <div x-transition x-on:click="open = false"
                class="flex min-h-screen items-center justify-center">
-
             <div class="relative max-w-2xl rounded-xl bg-skin-500 dark:bg-zinc-700 p-12 shadow-lg">
 
               <!-- Content -->
               {% if item.link != "" %}
-
                 <div class="gap-2">
                   <a target="_blank" href={{ item.link }}>
                     <figure>
@@ -69,7 +62,6 @@ permalink: /achievements/
                   <div class="mt-10 flex items-center justify-center gap-x-6">
                     <a href="{{ item.link }}" target="_blank" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Verify The Certificate Here</a>
                   </div>
-
                 </div>
 
               {% else %}
@@ -77,12 +69,9 @@ permalink: /achievements/
                   <img src="../assets/img/certificates/{{ item.img }}" alt="Certificate of {{ item.name  }}" eleventy:widths="500"/>
                 </figure>
               {% endif %}
-
             </div>
-
           </div>
         </div>
-
       </div>
     {% endfor %}
   </div>

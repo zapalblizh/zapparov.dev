@@ -1,4 +1,3 @@
-import flyingPages from "flying-pages-module";
 import Alpine from 'alpinejs';
 import dataDOM from './modules/Alpine.data/DOM';
 
@@ -9,5 +8,4 @@ Alpine.data("xDOM", dataDOM)
 // Start Alpine when the page is ready.
 window.addEventListener("DOMContentLoaded", () => {
     Alpine.start();
-    flyingPages({});
 });

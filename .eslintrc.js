@@ -2,7 +2,7 @@
 
 module.exports = {
     root: true,
-    extends: ["eslint:recommended", "prettier"],
+    extends: ["eslint:recommended"],
     // parser: "@babel/eslint-parser", // To use, uncomment this line and run `npm install eslint @babel/core @babel/eslint-parser --save-dev`
     parserOptions: {
         ecmaFeatures: {

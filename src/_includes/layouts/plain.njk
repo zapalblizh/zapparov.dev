@@ -1,9 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark" :class="theme.name" x-data="xDOM">
   <head>
-    {% include "partials/metagen.njk" %}
-    {% include "partials/scripts-head.njk" %}
-    {% include "partials/firebird.njk" %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- if noindex %}
+      <meta name="robots" content="noindex">
+    {%- endif %}
+
+    <!-- Metadata -->
+    <title>{{ title or metadata.title }}{{ suffix or metadata.suffix }}</title>
+    <meta name="author" content="Aleksandr Zapparov">
+    <meta name="description" content="{{ desc or description or metadata.description }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    <!-- Social -->
+    <meta property="og:title" content="{{ title or metadata.title }}{{ suffix or metadata.suffix }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ metadata.title }}">
+    <meta property="og:description" content="{{ desc or description or metadata.description }}">
+    <meta property="og:url" content="{{ page.url | htmlBaseUrl(metadata.url) }}">
+    <meta property="og:image" content="{{ metadata.url }}">
+    <meta property="og:image:alt" content="{{ title or metadata.title }}">
+    <meta property="og:url" content="{{ page.url | htmlBaseUrl(metadata.url) }}">
+    <meta name="twitter:title" content="{{ title or metadata.title }}{{ suffix or metadata.suffix }}">
+    <meta name="twitter:description" content="{{ desc or description or metadata.description }}">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@{{ metadata.author.twitter }}" />
+    <meta name="twitter:creator" content="@{{ metadata.author.twitter }}">
+    <meta name="twitter:image" content="{{ metadata.url }}" />
+    <meta name="twitter:image:alt" content="{{ title or metadata.title }}">
+
+    {%- if eleventy.env.runMode === "serve" -%}
+      <link rel="stylesheet" href="/css/main.css">
+    {%- else -%}
+      <style>{%- include "../../../_site/css/main.css" -%}</style>
+    {%- endif -%}
+
+    <!-- Firebird Integration -->
+    <script defer data-domain="zapparov.dev" src="https://firebird.beastful.org/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <!-- End Firebird Integration -->
   </head>
 
   <body class="bg-skin dark:text-skin-50 dark:bg-carbon antialiased">
