@@ -2,7 +2,7 @@
  * Add Eleventy filters here
  * https://www.11ty.dev/docs/filters/
  */
-import { DateTime, Duration } from "luxon";
+import { DateTime } from "luxon";
 
 export default {
     titleSinPeriod: (value) => {
