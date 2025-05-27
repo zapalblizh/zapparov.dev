@@ -44,8 +44,6 @@
     "eleventy-plugin-svg-contents": "^0.7.0",
     "tailwindcss": "^4.1.7",
     "@tailwindcss/cli": "^4.1.7",
-    "tailwindcss-safe-area": "^0.6.0",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
     "alpinejs": "^3.14.9",
     "html-minifier-terser": "^7.2.0",
     "luxon": "^3.6.1",
