@@ -7,14 +7,22 @@
       <meta name="robots" content="noindex">
     {%- endif %}
 
-    <!-- Metadata -->
-    <title>{{ title or metadata.title }}{{ suffix or metadata.suffix }}</title>
+    {# Metadata #}
+    <title>{{ title or metadata.title }}</title>
     <meta name="author" content="Aleksandr Zapparov">
     <meta name="description" content="{{ desc or description or metadata.description }}">
     <meta name="generator" content="{{ eleventy.generator }}">
 
-    <!-- Social -->
-    <meta property="og:title" content="{{ title or metadata.title }}{{ suffix or metadata.suffix }}">
+    {# Favicons #}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#292526">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    {# Social #}
+    <meta property="og:title" content="{{ title or metadata.title }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ metadata.title }}">
     <meta property="og:description" content="{{ desc or description or metadata.description }}">
@@ -22,7 +30,7 @@
     <meta property="og:image" content="{{ metadata.url }}">
     <meta property="og:image:alt" content="{{ title or metadata.title }}">
     <meta property="og:url" content="{{ page.url | htmlBaseUrl(metadata.url) }}">
-    <meta name="twitter:title" content="{{ title or metadata.title }}{{ suffix or metadata.suffix }}">
+    <meta name="twitter:title" content="{{ title or metadata.title }}">
     <meta name="twitter:description" content="{{ desc or description or metadata.description }}">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@{{ metadata.author.twitter }}" />
@@ -30,21 +38,41 @@
     <meta name="twitter:image" content="{{ metadata.url }}" />
     <meta name="twitter:image:alt" content="{{ title or metadata.title }}">
 
-    {%- if eleventy.env.runMode === "serve" -%}
-      <link rel="stylesheet" href="/css/main.css">
-    {%- else -%}
-      <style>{%- include "../../../_site/css/main.css" -%}</style>
-    {%- endif -%}
+    {# Styles #}
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/main.css">
 
-    <!-- Firebird Integration -->
+    {# Plausible #}
     <script defer data-domain="zapparov.dev" src="https://firebird.beastful.org/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-    <!-- End Firebird Integration -->
+
   </head>
   <body class="bg-skin text-carbon-500 dark:text-skin-50 dark:bg-carbon antialiased prose h-full">
     <div class="flex flex-col min-h-screen mx-auto sm:px-8 max-w-7xl">
 
-      {% include "partials/header.njk" %}
+      {# Header #}
+      {% if not blank %}
+        <header x-ref="header">
+          <nav class="bg-skin-600 dark:bg-zinc-800 md:rounded-md mx-auto flex container items-center justify-between sm:my-6 p-4" aria-label="Global">
+            <div class="achievements-btn">
+              <button class="-my-2.5 flex items-center justify-center rounded-md p-2.5">
+                <span><a href="/achievements/">{% svg "certificate", "size-7" %}</a></span>
+              </button>
+            </div>
+            <a href="/" class="gap-2 text-xl font-bold">
+              AZ
+            </a>
+            <button class="-my-2.5 rounded-md p-2.5"
+                    aria-label="Switch to dark theme"
+                    :aria-label="theme.dark ? 'Switch to light theme' : 'Switch to dark theme'"
+                    @click="toggleTheme()">
+              <span class="sr-only" x-text="theme.dark ? 'Switch to light theme' : 'Switch to dark theme'">Switch to dark theme</span>
+              <span x-show="theme.dark">{% svg "sun", "size-7" %}</span>
+              <span x-show="!theme.dark" x-cloak>{% svg "moon", "size-7" %}</span>
+            </button>
+          </nav>
+        </header>
+      {% endif %}
 
       <main class="my-12 grow">
         <div class="container">
@@ -54,8 +82,21 @@
         </div>
       </main>
 
-      {% include "partials/footer.njk" %}
-
+      {% if not blank %}
+        <footer x-ref="footer">
+          <div class="w-full bg-skin-600 dark:bg-zinc-800 md:rounded-md mx-auto flex container items-center justify-between sm:my-6 p-4">
+            <div>
+              <p>© {% year %} Aleksandr Zapparov </p>
+            </div>
+            <div>
+              <div class="grid grid-flow-col gap-4">
+                <span><a target="_blank" href="https://github.com/zapalblizh">{% svg "github-logo", "size-7" %}</a></span>
+                <span><a target="_blank" href="https://www.linkedin.com/in/aleksandr-zapparov/">{% svg "linkedin-logo", "size-7" %}</a></span>
+              </div>
+            </div>
+          </div>
+        </footer>
+      {% endif %}
     </div>
     <script defer src="/js/main.js"></script>
   </body>
