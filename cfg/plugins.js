@@ -4,7 +4,6 @@
  */
 
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
-import pluginSpeculationRules from "eleventy-plugin-speculation-rules";
 import { eleventyImageTransformPlugin as pluginImageTransform } from "@11ty/eleventy-img";
 import pluginSvgContents from "eleventy-plugin-svg-contents";
 
@@ -31,10 +30,6 @@ export default {
         class: "mx-auto rounded drop-shadow-lg",
       },
     });
-  },
-
-  SpeculationRules: (eleventyConfig) => {
-    eleventyConfig.addPlugin(pluginSpeculationRules);
   },
 
   EleventyHtmlBase: (eleventyConfig) => {
