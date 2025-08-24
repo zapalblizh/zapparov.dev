@@ -9,3 +9,4 @@ Alpine.data("xDOM", dataDOM)
 window.addEventListener("DOMContentLoaded", () => {
     Alpine.start();
 });
+

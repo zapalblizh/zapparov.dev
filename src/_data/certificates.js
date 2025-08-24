@@ -91,6 +91,13 @@ const certificates = [
     link: "https://www.coursera.org/account/accomplishments/specialization/KZKJWSNU93VN",
     img: "Cloud-Application-Development-Foundations.png"
   }, {
+    name: "IBM Full Stack Software Developer Certificate",
+    issuer: "IBM",
+    issuerSVG: "IBM.svg",
+    issueDate: "2025-06-10",
+    link: "https://coursera.org/verify/professional-cert/HUY3I1FTBA6R",
+    img: "full-stack-software-developer-professional-certificate.jpg"
+  }, {
     name: "DELE Level B2",
     issuer: "Instituto Cervantes",
     issuerSVG: "instituto-cervantes.svg",
@@ -143,16 +150,16 @@ const certificates = [
     name: "Hubspot CMS for Developers I",
     issuer: "Hubspot Academy",
     issuerSVG: "hubspot.svg",
-    issueDate: "2024-01-25",
-    link: "https://app.hubspot.com/academy/achievements/d1czztr9/en/1/aleksandr-zapparov/hubspot-cms-for-developers",
-    img: "Hubspot-CMS-for-Developers-I-Certificate.png",
+    issueDate: "2025-07-21",
+    link: "",
+    img: "Hubspot-CMS-for-Developers-I-Certificate-New.png",
   }, {
     name: "Hubspot CMS for Developers II",
     issuer: "Hubspot Academy",
     issuerSVG: "hubspot.svg",
     issueDate: "2024-02-15",
-    link: "https://app.hubspot.com/academy/achievements/8yqzk7ct/en/1/aleksandr-zapparov/hubspot-cms-for-developers-ii-best-practices",
-    img: "Hubspot-CMS-for-Developers-II-Certificate.png",
+    link: "",
+    img: "Hubspot-CMS-for-Developers-II-Certificate-New.png",
   }, {
     name: "CS50's Introduction to Computer Science",
     issuer: "Harvard Online (edX)",
