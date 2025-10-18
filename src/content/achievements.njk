@@ -39,39 +39,40 @@ permalink: /achievements/
         </div>
 
         <!-- Toggle Panel -->
-        <div x-show="open"
-             style="display: none"
-             role="dialog"
-             aria-modal="true"
-             :aria-labelledby="$id('modal-title')"
-             class="fixed inset-0 z-10">
+        {% if item.img != "" %}
+          <div x-show="open"
+               style="display: none"
+               role="dialog"
+               aria-modal="true"
+               :aria-labelledby="$id('modal-title')"
+               class="fixed inset-0 z-10">
 
-          <div x-transition x-on:click="open = false"
-               class="flex min-h-screen items-center justify-center">
-            <div class="relative max-w-2xl rounded-xl bg-skin-500 dark:bg-zinc-700 p-12 shadow-lg">
+            <div x-transition x-on:click="open = false"
+                 class="flex min-h-screen items-center justify-center">
+              <div class="relative max-w-2xl rounded-xl bg-skin-500 dark:bg-zinc-700 p-12 shadow-lg">
 
-              <!-- Content -->
-              {% if item.link != "" %}
-                <div class="gap-2">
-                  <a target="_blank" href={{ item.link }}>
-                    <figure>
-                      <img src="../assets/img/certificates/{{ item.img }}" alt="Certificate of {{ item.name }}" eleventy:widths="450" />
-                    </figure>
-                  </a>
+                <!-- Content -->
+                {% if item.link != "" %}
+                  <div class="gap-2">
+                    <a target="_blank" href={{ item.link }}>
+                      <figure>
+                        <img src="../assets/img/certificates/{{ item.img }}" alt="Certificate of {{ item.name }}" eleventy:widths="450" />
+                      </figure>
+                    </a>
 
-                  <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="{{ item.link }}" target="_blank" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Verify The Certificate Here</a>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                      <a href="{{ item.link }}" target="_blank" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Verify The Certificate Here</a>
+                    </div>
                   </div>
-                </div>
-
-              {% else %}
-                <figure>
-                  <img src="../assets/img/certificates/{{ item.img }}" alt="Certificate of {{ item.name  }}" eleventy:widths="500"/>
-                </figure>
-              {% endif %}
+                {% else %}
+                  <figure>
+                    <img src="../assets/img/certificates/{{ item.img }}" alt="Certificate of {{ item.name  }}" eleventy:widths="500"/>
+                  </figure>
+                {% endif %}
+              </div>
             </div>
           </div>
-        </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>

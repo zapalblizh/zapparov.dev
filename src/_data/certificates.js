@@ -101,38 +101,37 @@ const certificates = [
     name: "DELE Level B2",
     issuer: "Instituto Cervantes",
     issuerSVG: "instituto-cervantes.svg",
-    classes: "text-red-100 scale-90",
     issueDate: "2022-10-13",
     link: "",
-    img: "DELE_B2.png"
+    img: ""
   }, {
     name: "Pearson EDEXCEL International GCSE",
     issuer: "Pearson EDEXCEL",
     issuerSVG: "pearson.svg",
     issueDate: "2023-09-30",
     link: "",
-    img: "British-Council-GCSE-2022.png"
+    img: ""
   }, {
     name: "Pearson EDEXCEL International As Levels Physics",
     issuer: "Pearson EDEXCEL",
     issuerSVG: "pearson.svg",
     issueDate: "2023-03-08",
     link: "",
-    img: "As-level-Pearson-Physics.png"
+    img: ""
   }, {
     name: "CIE As Levels Maths and English Language",
     issuer: "CIE",
     issuerSVG: "CIE.svg",
     issueDate: "2023-11-01",
     link: "",
-    img: "As-levels-CIE.png"
+    img: ""
   }, {
     name: "IELTS English",
     issuer: "CIE",
     issuerSVG: "CIE.svg",
     issueDate: "2022-03-03",
     link: "",
-    img: "IELTS.png"
+    img: ""
   }, {
     name: "HTML, CSS and Javascript for Web Developers",
     issuer: "Johns Hopkins University",
