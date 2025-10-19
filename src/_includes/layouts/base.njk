@@ -52,13 +52,13 @@
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
   </head>
-  <body class="bg-skin text-carbon-500 dark:text-skin-50 dark:bg-carbon antialiased prose h-full">
+  <body class="bg-zinc-100 text-carbon flex flex-col">
     <div class="flex flex-col min-h-screen mx-auto sm:px-8 max-w-7xl">
 
       {# Header #}
       {% if not blank %}
         <header x-ref="header">
-          <nav class="bg-skin-600 dark:bg-zinc-800 md:rounded-md mx-auto flex container items-center justify-between sm:my-6 p-4" aria-label="Global">
+          <nav class="border-solid border-2 bg-zinc-50 border-zinc-200 rounded-md dark:bg-zinc-800 md:rounded-md mx-auto flex container items-center justify-between sm:my-6 p-4" aria-label="Global">
             <div class="achievements-btn">
               <button class="-my-2.5 flex items-center justify-center rounded-md p-2.5">
                 <span><a href="/achievements/">{% svg "certificate", "size-7" %}</a></span>
@@ -87,9 +87,10 @@
         </div>
       </main>
 
+      {# Footer #}
       {% if not blank %}
         <footer x-ref="footer">
-          <div class="w-full bg-skin-600 dark:bg-zinc-800 md:rounded-md mx-auto flex container items-center justify-between sm:my-6 p-4">
+          <div class="w-full border-solid border-2 bg-zinc-50 border-zinc-200 rounded-md dark:bg-zinc-800 md:rounded-md mx-auto flex container items-center justify-between sm:my-6 p-4">
             <div>
               <p>© {% year %} Aleksandr Zapparov </p>
             </div>

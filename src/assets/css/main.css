@@ -27,16 +27,7 @@
   --color-white: #fff;
   --color-black: #000;
 
-  --color-carbon-500: #222;
-  --color-carbon: #191919;
-
-  --color-skin-50: #dddddd;
-  --color-skin-500: #ece3ca;
-  --color-skin-600: #e5d8b4;
-  --color-skin-700: #ada17f;
-  --color-skin: #ece3ca;
-
-  --color-red-100: #cf4037;
+  --color-carbon: #18181b;
 }
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
